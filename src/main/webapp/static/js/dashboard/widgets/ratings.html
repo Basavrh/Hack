@@ -1,0 +1,92 @@
+<div class="col-md-4 col-sm-4 col-xs-12">
+	<div class="x_panel tile" style="height: 250px;">
+		<div class="x_title">
+			<h2>Ratings</h2>
+			<div class="clearfix"></div>
+		</div>
+		<div class="x_content" style="margin-top: 0px;">
+			<div class="col-md-6"><canvas class="canvasDoughnut" height="140" width="140"></canvas></div>
+			<table class="col-md-6">
+				<tr>
+					<th>
+						<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+							<p class="">Stars</p>
+						</div>
+					</th>
+					<th>
+						<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+							<p class="">Percentage</p>
+						</div>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<p>
+							<i class="fa fa-square green"></i>  5 Stars
+						</p>
+					</td>
+					<td style="text-align: center;">30%</td>
+					
+				</tr>
+				<tr>
+					<td>
+						<p>
+							<i class="fa fa-square blue"></i>  4 Stars
+						</p>
+					</td>
+					<td style="text-align: center;">10%</td>
+				</tr>
+				<tr>
+					<td>
+						<p>
+							<i class="fa fa-square purple"></i>  3 Stars
+						</p>
+					</td>
+					<td style="text-align: center;">20%</td>
+				</tr>
+				<tr>
+					<td>
+						<p>
+							<i class="fa fa-square aero"></i>  2 Stars
+						</p>
+					</td>
+					<td style="text-align: center;">15%</td>
+				</tr>
+				<tr>
+					<td>
+						<p>
+							<i class="fa fa-square red"></i>  1 Stars
+						</p>
+					</td>
+					<td style="text-align: center;">30%</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function() {
+		var chart_doughnut_settings = {
+			type: 'doughnut',
+			tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+			data: {
+				labels: ["2 Stars","3 Stars","1 Stars","5 Stars","4 Stars"],
+				datasets: [{
+					data: [15, 20, 30, 10, 30],
+					backgroundColor: ["#BDC3C7","#9B59B6","#E74C3C","#26B99A","#3498DB"	],
+					hoverBackgroundColor: ["#CFD4D8","#B370CF","#E95E4F","#36CAAB","#49A9EA"]
+				}]
+			},
+			options: { 
+				legend: false, 
+				responsive: false 
+			}
+		}
+	
+		$('.canvasDoughnut').each(function(){
+			var chart_element = $(this);
+			var chart_doughnut = new Chart( chart_element, chart_doughnut_settings);
+		});
+	});
+</script>
